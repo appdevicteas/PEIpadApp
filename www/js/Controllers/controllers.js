@@ -22,13 +22,8 @@ angular.module('starter.controllers', ['ngCookies'])
         $scope.setCurrentUsername = function (name) {
             $scope.username = name;
         };
-
-        
     })
-.controller('LoginCtrl', ['$scope', '$state', '$http', 'AuthService', '$cookieStore', '$ionicPopup', '$localStorage', function ($scope, $state, $http, AuthService, $cookieStore, $ionicPopup, $localStorage) {
-
-
-
+.controller('LoginCtrl', ['$scope', '$state', '$http', 'AuthService', '$cookieStore', '$ionicPopup', function ($scope, $state, $http, AuthService, $cookieStore, $ionicPopup) {
 
     $scope.data = {};
     $scope.LoginData = [];
@@ -42,33 +37,11 @@ angular.module('starter.controllers', ['ngCookies'])
 
 
     $scope.logout = function () {
+        AuthService.logout();
         $state.go("login");
     };
 
-    $scope.LocalStore = function () {
-
-        $scope.Localdata = {};
-        var myObj = { firstname: "Nic", lastname: "Raboy", website: "Testing URL" }
-
-        $scope.SetLocalData = function () {
-            alert("Saving to Local Store.." + JSON.stringify(myObj));
-            $localStorage.saved = JSON.stringify(myObj);
-        };
-        $scope.SetLocalData();
-
-        $scope.GetLocalData = function () {
-            $scope.Localdata = JSON.parse($localStorage.saved);
-            alert("Fetching from Local Store.." + JSON.stringify($scope.Localdata));
-        };
-        $scope.GetLocalData();
-
-    };
     $scope.login = function (data) {
-
-      
-       
-        
-
         if (!angular.isDefined(data.username) || !angular.isDefined(data.password) || data.username.trim() == "" || data.password.trim() == "") {
             alert("Enter both user name and password");
             return;
@@ -296,8 +269,8 @@ angular.module('starter.controllers', ['ngCookies'])
     $scope.GetProdData = function () {
         if ($stateParams.CustDtlName) {
 
-            var dtstartDate = $scope.dtStartDate.inputDate.getDate() + '-' + ($scope.dtStartDate.inputDate.getMonth() + 1) + '-' + $scope.dtStartDate.inputDate.getFullYear();
-            var dtEndDate = $scope.dtEndDate.inputDate.getDate() + '-' + ($scope.dtEndDate.inputDate.getMonth() + 1) + '-' + $scope.dtEndDate.inputDate.getFullYear();
+            var dtstartDate = $scope.dtStartDatePopup.inputDate.getDate() + '-' + ($scope.dtStartDatePopup.inputDate.getMonth() + 1) + '-' + $scope.dtStartDatePopup.inputDate.getFullYear();
+            var dtEndDate = $scope.dtEndDatePopup.inputDate.getDate() + '-' + ($scope.dtEndDatePopup.inputDate.getMonth() + 1) + '-' + $scope.dtEndDatePopup.inputDate.getFullYear();
 
             $state.go('app.activeProductByCustomer', { CustDtlCode: $scope.custDetail.CustDtlCode, StartDate: dtstartDate, EndDate: dtEndDate });
         }
