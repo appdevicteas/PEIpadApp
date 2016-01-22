@@ -30,10 +30,10 @@
                         <p style="margin-bottom:20px;">
                             <label class="item item-input date-picker">
                                 <span class="input-label">Start Date:</span>
-                                <input type="date" placeholder="End Date" ng-model="dtStartDate.inputDate">
-                                <!--<ionic-datepicker input-obj="dtStartDatePopup">{{dtStartDatePopup.inputDate | date:'dd-MM-yyyy'}}
-                                    <button class="button button-block button-positive"></button>
-                                </ionic-datepicker>-->
+                                <!--<input type="date" ng-model="Startdate">-->
+                                <ionic-datepicker input-obj="dtStartDatePopup">
+                                    <button class="button button-block button-positive"> {{dtStartDatePopup.inputDate | date:'dd-MM-yyyy'}}</button>
+                                </ionic-datepicker>
                             </label>
                         </p>
                     </div>
@@ -41,10 +41,9 @@
                         <p>
                             <label class="item item-input date-picker">
                                 <span class="input-label">End Date:</span>
-                                <input type="date" placeholder="End Date" ng-model="dtEndDate.inputDate">
-                                <!--<ionic-datepicker input-obj="dtEndDatePopup">
+                                <ionic-datepicker input-obj="dtEndDatePopup">
                                     <button class="button button-block button-positive"> {{dtEndDatePopup.inputDate | date:'dd-MM-yyyy'}} </button>
-                                </ionic-datepicker>-->
+                                </ionic-datepicker>
                             </label>
                         </p>
                     </div>
