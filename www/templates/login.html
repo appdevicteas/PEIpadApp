@@ -1,0 +1,34 @@
+<ion-view title="Price Engine App" class="login-screen">
+    <div class="login-screen-inner">
+        <ion-header-bar></ion-header-bar>
+        <ion-content overflow-scroll="true" padding="true" scroll="false" has-header="true" class="has-header">
+            <div class="login-wrapper">
+                <div class="login-wrapper-inner">
+                    <div class="cover-container">
+                        <div class="login-area">
+                            <form>
+                                <div class="list list-inset">
+                                    <label class="item item-input">
+                                        <span class="input-label">Username</span>
+                                        <input type="text" placeholder="Username" ng-model="data.username">
+                                    </label>
+                                    <label class="item item-input">
+                                        <span class="input-label">Password</span>
+                                        <input type="password" placeholder="Password" ng-model="data.password">
+                                    </label>
+                                    <label class="item item-input">
+                                        <span class="input-label">Country</span>
+                                        <select ng-model="data.CountryId" ng-options="item.Name for item in CountryData"></select>
+                                    </label>
+                                    <button class="button button-block button-calm" ng-click="login(data)">Start Engine</button>
+                                </div>
+                            </form>
+                        </div><!--end login area-->
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+        <ion-footer-bar class="footer">
+        </ion-header-bar>
+    </div>
+</ion-view>

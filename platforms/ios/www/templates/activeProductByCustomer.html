@@ -1,0 +1,48 @@
+<ion-view title="Active Product By Customer">
+    <div class="sticky-header">
+        <div class="row">
+            <div class="col col-50">
+                <h1 class="logo">Castrol</h1>
+            </div>
+            <div class="col">
+                <h2 class="project">Castrol Pricing Engine</h2>
+            </div>
+        </div>
+    </div><!--end sticky header-->
+    <div class="content-area">
+        <ion-content overflow-scroll="true" padding="true" class="has-header">
+            <div class="repeated-list sku-greed">
+                <ion-list class="list">
+                    <ion-item class="item item-divider">
+                        <div class="row">
+                            <div class="col col-50">
+                                Product
+                            </div>
+                            <div class="col" style="text-align:right;">
+                                Volume
+                            </div>
+                            <div class="col" style="text-align:right;">
+                                Month
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="item" ng-repeat="prodList in ProdLists">
+                        <div class="row">
+                            <div class="col col-50" >
+                                {{prodList.itemcodedesc}}
+                            </div>
+                            <div class="col" style="text-align:right;">
+                                {{prodList.volumeInLtr}}
+                            </div>
+                            <div class="col" style="text-align:right;">
+                                {{prodList.maxMonthYear}}
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </div>
+
+
+        </ion-content>
+    </div>
+</ion-view>

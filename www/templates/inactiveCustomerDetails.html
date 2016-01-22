@@ -1,0 +1,53 @@
+﻿<ion-view title="Inactive Customers">
+    <div class="sticky-header">
+        <div class="row">
+            <div class="col col-50">
+                <h1 class="logo">Castrol</h1>
+            </div>
+            <div class="col">
+                <h2 class="project">Castrol Pricing Engine</h2>
+            </div>
+        </div>
+    </div><!--end sticky header-->
+    <div class="content-area">
+        <ion-content overflow-scroll="true" padding="true" class="has-header">
+            <form class="list"></form>
+            <!--<div class="row">
+                <div class="col col-50">
+                    <h2> </h2>
+                 
+                </div>
+                <div class="col">
+                    <h2> </h2>
+              
+                </div>
+            </div>-->
+            <div class="repeated-list sku-greed">
+                <ion-list class="list">
+                    <ion-item class="item item-divider">
+                        <div class="row">
+                            <div class="col col-50">
+                                Cust Code
+                            </div>
+                            <div class="col">
+                                Cust Name
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="item" ng-repeat="inActCustList in InActiveCustLists">
+                        <div class="row">
+                            <div class="col col-50">
+                                {{inActCustList.custcode}}
+                            </div>
+                            <div class="col">
+                                {{inActCustList.custname}}
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </div>
+            
+
+        </ion-content>
+    </div>
+</ion-view>

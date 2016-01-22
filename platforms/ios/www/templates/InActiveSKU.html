@@ -1,0 +1,75 @@
+﻿<ion-view title="Inactive SKU List">
+    <div class="sticky-header">
+        <div class="row">
+            <div class="col col-50">
+                <h1 class="logo">Castrol</h1>
+            </div>
+            <div class="col">
+                <h2 class="project">Castrol Pricing Engine</h2>
+            </div>
+        </div>
+    </div><!--end sticky header-->
+    <div class="content-area">
+        <ion-content overflow-scroll="true" padding="true" class="has-header">
+            <form class="list"></form>
+            <div class="repeated-list sku-greed">
+                <ion-list class="list">
+                    <ion-item class="item item-divider">
+                        <div class="row">
+                            <div class="col col-50">
+                                Customer Name
+                            </div>
+                            <div class="col">
+                                Customer No
+                            </div>
+                        </div>
+                    </ion-item>
+                    <ion-item class="item">
+                        <div class="row">
+                            <div class="col col-50">
+                                {{ ProdLists.CustName }}
+                            </div>
+                            <div class="col">
+                                {{ ProdLists.CustCode }}
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <div class="repeated-list sku-greed">
+                <ion-list class="list">
+                    <ion-item class="item item-divider">
+                        <div class="row">
+                            <div class="col col-50">
+                                PRODUCT NAME
+                            </div>
+                            <div class="col">
+                                PRODUCT CODE
+                            </div>
+                        </div>
+                    </ion-item>
+                    <!--<ion-item class="item" ng-repeat="InActSKULst in InActiveSKUList">
+                        <div class="row">
+                            <div class="col col-50">
+                                {{ ProdLists.CustName }}
+                            </div>
+                            <div class="col">
+                                {{ ProdLists.CustCode }}
+                            </div>
+                        </div>
+                    </ion-item>-->
+                    <ion-item class="item" ng-repeat="InActSKULst in InActiveSKUList">
+                        <div class="row">
+                            <div class="col col-50">
+                                {{InActSKULst.prodname}}
+                            </div>
+                            <div class="col">
+                                {{InActSKULst.prodcode}}
+                            </div>
+                        </div>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </ion-content>
+    </div>
+</ion-view> 

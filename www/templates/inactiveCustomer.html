@@ -1,0 +1,40 @@
+﻿<ion-view title="Inactive Customer">
+    <div class="sticky-header">
+        <div class="row">
+            <div class="col col-50">
+                <h1 class="logo">Castrol</h1>
+            </div>
+            <div class="col">
+                <h2 class="project">Castrol Pricing Engine</h2>
+            </div>
+        </div>
+    </div><!--end sticky header-->
+    <div class="content-area">
+        <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
+            <div class="row">
+                <div class="col col-80 col-offset-10">
+                    <p>
+                        <label class="item item-input date-picker">
+                            <span class="input-label">Start Date</span>
+                            <!--<input type="date" ng-model="Startdate">-->
+                            <ionic-datepicker input-obj="dtStartDatePopup">
+                                <button class="button button-block button-positive"> {{dtStartDatePopup.inputDate | date:'dd-MM-yyyy'}}</button>
+                            </ionic-datepicker>
+                        </label>
+                    </p>
+                    <p>
+                        <label class="item item-input date-picker">
+                            <span class="input-label">End Date</span>
+                            <ionic-datepicker input-obj="dtEndDatePopup">
+                                <button class="button button-block button-positive"> {{dtEndDatePopup.inputDate | date:'dd-MM-yyyy'}} </button>
+                            </ionic-datepicker>
+                        </label>
+                    </p>
+                    <a class="button button-stable button-block button-green" ng-click="GetInActiveCustomerData()">Submit</a>
+                    <div class="spacer" style="width: 300px; height: 38px;"></div>
+                </div>
+            </div>
+
+        </ion-content>
+    </div>
+</ion-view>

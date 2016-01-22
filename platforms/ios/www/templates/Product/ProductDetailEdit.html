@@ -1,0 +1,112 @@
+﻿<ion-view title="Product Detail Edit">
+    <div class="sticky-header">
+        <div class="row">
+            <div class="col col-50">
+                <h1 class="logo">Castrol</h1>
+            </div>
+            <div class="col">
+                <h2 class="project">Castrol Pricing Engine</h2>
+            </div>
+        </div>
+    </div><!--end sticky header-->
+    <div class="content-area">
+        <ion-content overflow-scroll="true" padding="true" scroll="true" class="has-header customer-details">
+            <form class="list">
+
+
+                <div>
+                    <ion-list class="disable-area">
+                        <ion-item class="item item-input">
+                            <span class="input-label">Product Code:</span>
+                            {{ prodDetails.ProdCode }}
+                        </ion-item>
+                        <ion-item class="item item-input">
+                            <span class="input-label">Product Description:</span>
+                            {{ prodDetails.ProdDesc }}
+                        </ion-item>
+                    </ion-list>
+                    <label class="item item-input">
+                        <span class="input-label">Product Brand:</span>
+                        <input type="text" id="PrdImg" placeholder="Product Brand" value='{{prodDetails.ProdBrand}}' ng-model="prodDetails.ProdBrand">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Product Variant:</span>
+                        <input type="text" id="PrdImg" placeholder="Product Variant" value='{{prodDetails.ProdVariant}}' ng-model="prodDetails.ProdVariant">
+                    </label>
+                    <div class="list">
+                        <label class="item item-input item-select">
+                            <span class="input-label">Product Category:</span>
+
+
+                            <select ng-model="prodDetails.ProdCatgry">
+                                <option value="">--Select --</option>
+                                <option ng-repeat="item in ProdCatgryData" ng-selected="item.Name == prodDetails.ProdCatgry" value="{{item.Name}}">{{item.Name}}</option>
+                            </select>
+
+
+
+
+                        </label>
+                    </div>
+                    <!--<label class="item item-input">
+                        <div class="input-label"><b>Product Category: </b></div>
+                        <select ng-model="ProdCatgryData"
+                                ng-options="item.Name
+                        for item in ProdCatgryData" value='{{prodDetails.ProdCatgry}}' ng-model="prodDetails.ProdCatgry"></select>
+                    </label>-->
+
+                    <label class="item item-input">
+                        <span class="input-label">Product Barcode:</span>
+                        <input type="text" id="PrdImg" placeholder="Product Barcode" value='{{prodDetails.ProdBarCode}}' ng-model="prodDetails.ProdBarCode">
+                    </label>
+
+                    <label class="item item-input">
+                        <span class="input-label">Product Size:</span>
+                        <input type="text" id="PrdImg" placeholder="Product Size" value='{{prodDetails.ProdSize}}' ng-model="prodDetails.ProdSize">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Cartoon Quantity:</span>
+                        <input type="text" id="PrdRRP" placeholder="Cartoon Quantity" value='{{prodDetails.CartnQty}}' ng-model="prodDetails.CartnQty">
+                    </label>
+                    <ion-list class="disable-area">
+                        <ion-item class="item item-input">
+                            <span class="input-label">UOM:</span>
+                            {{ prodDetails.UOM }}
+                        </ion-item>
+                        <ion-item class="item item-input">
+                            <span class="input-label">Default Warehouse COGS:</span>
+                            {{ prodDetails.COGS }}
+                        </ion-item>
+                        <ion-item class="item item-input">
+                            <span class="input-label">RRP:</span>
+                            {{ prodDetails.RRP }}
+                        </ion-item>
+                        <ion-item class="item item-input">
+                            <span class="input-label">List Price:</span>
+                            {{ prodDetails.ListPrice }}
+                        </ion-item>
+                    </ion-list>
+                    <label class="item item-input">
+                        <span class="input-label">Target Price:</span>
+                        <input type="text" id="PrdListPrice" placeholder="" value='{{prodDetails.TargetPrice}}' ng-model="prodDetails.TargetPrice">
+                    </label>
+                    <ion-list class="disable-area">
+                        <ion-item class="item item-input">
+                            <span class="input-label">NHF:</span>
+                            {{ prodDetails.NHF }}
+                        </ion-item>
+                    </ion-list>
+                    <div class="row">
+                        <div class="col col-50">
+                            <button class="button button-stable button-block button-red" ng-click="GoBackSelectProduct()">Cancel</button>
+                        </div>
+                        <div class="col">
+                            <button class="button button-stable button-block button-green" ng-click="ProductUpdate(prodDetails)">Save</button>
+                        </div> 
+                    </div>
+                </div>
+
+            </form>
+        </ion-content>
+    </div>
+</ion-view>

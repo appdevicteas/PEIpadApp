@@ -1,0 +1,28 @@
+﻿<ion-view title="Select Product">
+    <div class="sticky-header">
+        <div class="row">
+            <div class="col col-50">
+                <h1 class="logo">Castrol</h1>
+            </div>
+            <div class="col">
+                <h2 class="project">Castrol Pricing Engine</h2>
+            </div>
+        </div>
+    </div><!--end sticky header-->
+    <div class="content-area">    
+        <ion-content overflow-scroll="true" padding="true" class="has-header">
+            <h4>Select Product</h4>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search Product" ng-model="input.searchInput">{{searchInput}}
+                </label>
+            </div>
+            <ion-list class="repeated-list">
+                <ion-item ng-repeat="prodList in SerachprodLists | filter:input.searchInput" ng-click="GetProductDetail(prodList)">
+                    {{prodList.proddesc}}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </div>
+</ion-view>

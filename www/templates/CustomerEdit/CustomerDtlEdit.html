@@ -1,0 +1,126 @@
+﻿<ion-view title="Customer Detail">
+    <div class="sticky-header">
+        <div class="row">
+            <div class="col col-50">
+                <h1 class="logo">Castrol</h1>
+            </div>
+            <div class="col">
+                <h2 class="project">Castrol Pricing Engine</h2>
+            </div>
+        </div>
+    </div><!--end sticky header-->
+    <div class="content-area">
+        <ion-content overflow-scroll="true" padding="true" scroll="true" class="has-header customer-details">
+            <form class="list">
+                <a class="item item-icon-left item-icon-right select-customer" href="#/app/SearchCust">
+                    <i class="icon ion-person"></i>
+                    <div>
+                        <span class="title">Click here to select the Customer</span>
+                    </div>
+                    <i class="icon ion-arrow-right-c"></i>
+                </a>
+                <div class="button-bar">
+                    <button class="button button-block button-red" ng-click="GoBackSelectcustomer()">Cancel</button>
+                    <button class="button button-block button-green" ng-click="save(custDetailData)">Save</button>
+                </div>
+                <div>
+                    <ion-list class="disable-area">
+                        <ion-item class="item item-input">
+                            <span class="input-label">Customer Name:</span>
+                            {{ custDetailData.CustDtlName }}
+                        </ion-item>
+                        <ion-item class="item item-input">
+                            <span class="input-label">Channel:</span>
+                            {{ custDetailData.CustDtlChannel }}
+                        </ion-item>
+                    </ion-list>
+                    <label class="item item-input">
+                        <span class="input-label">Main Contract:</span>
+                        <input type="text" id="ipContract" placeholder="Main Contract" value='{{custDetailData.CustDtlDtlMainConact}}' ng-model="custDetailData.CustDtlDtlMainConact">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Billing Address:</span>
+                        <input type="text" id="ipBillAddr" placeholder="Billing Address" value='{{custDetailData.CustDtlBillAddr}}' ng-model="custDetailData.CustDtlBillAddr">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Phone:</span>
+                        <input type="text" id="ipPhone" placeholder="Phone" value='{{custDetailData.CustDtlPhone}}' ng-model="custDetailData.CustDtlPhone">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Email:</span>
+                        <input type="text" id="ipEmail" placeholder="Email" value='{{custDetailData.CustDtlEmail}}' ng-model="custDetailData.CustDtlEmail">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Notes:</span>
+                        <input type="text" id="ipNotes" placeholder="Notes" value='{{custDetailData.CustDtlNote}}' ng-model="custDetailData.CustDtlNote">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Last Competitor Engagement:</span>
+                        <input type="text" id="ipLCE" placeholder="Last Competitor Engagement" value='{{custDetailData.CustDtlLCM}}' ng-model="custDetailData.CustDtlLCM">
+                    </label>
+                    <ion-list class="disable-area">
+                        <ion-item class="item item-input">
+                            <span class="input-label">Territory Code:</span>
+                            {{ custDetailData.CustDtlTerrCode }}
+                        </ion-item>
+                        <ion-item class="item item-input">
+                            <span class="input-label">Territory Description:</span>
+                            {{ custDetailData.CustTerrName }}
+                        </ion-item>
+                        <ion-item class="item item-input">
+                            <span class="input-label">PriceGroup Code:</span>
+                            {{ custDetailData.CustDtlPGCode }}
+                        </ion-item>
+                        <ion-item class="item item-input">
+                            <span class="input-label">PriceGroup Description:</span>
+                            {{ custDetailData.CustDtlPGName }}
+                        </ion-item>
+                        <ion-item class="item item-input">
+                            <span class="input-label">Warehouse Code</span>
+                            {{ custDetailData.CustDtlWHCode }}
+                        </ion-item>
+                        <ion-item class="item item-input">
+                            <span class="input-label">Warehouse Description:</span>
+                            {{ custDetailData.CustDtlWHName }}
+                        </ion-item>
+                    </ion-list>
+                    <label class="item item-input">
+                        <span class="input-label">Freight Code:</span>
+                        <input type="text" id="ipFrghtCode" placeholder="Freight Code" value='{{custDetailData.CustDtlFrghtCode}}' ng-model="custDetailData.CustDtlFrghtCode">
+                    </label>
+                    <div class="list">
+                        <label class="item item-input item-select">
+                            <span class="input-label">Delivery Schedule:</span>
+
+
+                            <select ng-model="custDetailData.CustDtlDelvSchdl">
+                                <option value="">--Select --</option>
+                                <option ng-repeat="item in DelvSchdlData" ng-selected="item.Name == custDetailData.CustDtlDelvSchdl" value="{{item.Name}}">{{item.Name}}</option>
+                            </select>
+
+
+
+
+                        </label>
+                    </div>
+                    <label class="item item-input">
+                        <span class="input-label">Payment Terms: </span>
+                        <input type="text" id="ipPayTerm" placeholder="Payment Terms" value='{{custDetailData.CustDtlPayTerm}}' ng-model="custDetailData.CustDtlPayTerm">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Ship To Address: </span>
+                        <input type="text" id="ipShpAddr" placeholder="Ship To Address" value='{{custDetailData.CustDtlShipAddr}}' ng-model="custDetailData.CustDtlShipAddr">
+                    </label>
+                </div>
+                <div class="button-bar">
+                    <button class="button button-block button-red" ng-click="GoBackSelectcustomer()">Cancel</button>
+                    <button class="button button-block button-green" ng-click="save(custDetailData)">Save</button>
+                </div>
+                <div class="button-bar">
+                    <a class="button button-stable button-block select-customer" ng-click="GetProdData()">Last Month Transactions</a>
+                    <a class="button button-stable button-block select-customer" ng-click="GetInActiveSKU(custDetailData)">Inactive SKU</a>
+                </div>
+            </form>
+        </ion-content>
+    </div>
+</ion-view>
